@@ -1,0 +1,21 @@
+
+#+Title: manna-harbour / qmk_firmware
+
+This repository is a fork of [[https://github.com/qmk/qmk_firmware][qmk / qmk_firmware]].
+
+The following branches are maintained here and periodically merged upstream:
+
+- [[https://github.com/manna-harbour/qmk_firmware/blob/miryoku/users/manna-harbour_miryoku/miryoku.org][miryoku]]
+
+  *Miryoku*
+
+  Miryoku is an ergonomic, minimal, orthogonal layout for ergo or ortho
+  keyboards, implemented as part of the QMK firmware.
+
+- [[https://github.com/manna-harbour/qmk_firmware/blob/crkbd/keyboards/crkbd/keymaps/manna-harbour/readme.org][crkbd]]
+
+  *Crkbd Keymap by Manna Harbour*
+
+  This keymap includes crkbd-specific hardware feature support.
+
+[[https://github.com/manna-harbour][./manna-harbour-boa-32.png]]
