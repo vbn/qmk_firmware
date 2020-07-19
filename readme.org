@@ -1,6 +1,8 @@
 
 #+Title: manna-harbour / qmk_firmware
 
+[[./qmk_firmware-social.png]]
+
 This repository is a fork of [[https://github.com/qmk/qmk_firmware][qmk / qmk_firmware]].
 
 The following branches are maintained here and periodically merged upstream:
