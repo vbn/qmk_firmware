@@ -5,8 +5,6 @@ MOUSEKEY_ENABLE = yes # Mouse keys
 EXTRAKEY_ENABLE = yes # Audio control and System control
 AUTO_SHIFT_ENABLE = yes # Auto Shift
 
-SRC += manna-harbour_miryoku.c # keymap
-
 # select alternative base layer alphas
 ifneq ($(strip $(MIRYOKU_ALPHAS)),)
   OPT_DEFS += -DMIRYOKU_ALPHAS_$(MIRYOKU_ALPHAS)

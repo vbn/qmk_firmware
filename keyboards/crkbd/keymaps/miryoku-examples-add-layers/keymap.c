@@ -23,8 +23,6 @@ enum layers { BASE, MBO, MEDR, NAVR, MOUR, NSSL, NSL, FUNL };
 // copied from users/manna-harbour_miryoku/manna-harbour_miryoku.c
 // generated from users/manna-harbour_miryoku/miryoku.org  -*- buffer-read-only: t -*-
 
-#include "manna-harbour_miryoku.h"
-
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 #if defined MIRYOKU_ALPHAS_COLEMAK
   [BASE] = LAYOUT_miryoku(
