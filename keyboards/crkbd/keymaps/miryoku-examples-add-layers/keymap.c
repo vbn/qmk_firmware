@@ -1,8 +1,6 @@
 // copied from users/manna-harbour_miryoku/manna-harbour_miryoku.h
 // generated from users/manna-harbour_miryoku/miryoku.org  -*- buffer-read-only: t -*-
 
-#pragma once
-
 #include QMK_KEYBOARD_H
 
 #define KC_NP KC_NO // key is not present
