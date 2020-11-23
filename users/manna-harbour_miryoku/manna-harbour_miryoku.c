@@ -114,6 +114,6 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_LCBR, KC_AMPR, KC_ASTR, KC_LPRN, KC_RCBR, X_NA,    X_NA,    X_NA,    X_NA,    RESET,
     KC_COLN, KC_DLR,  KC_PERC, KC_CIRC, KC_PLUS, X_NA,    KC_LSFT, KC_LCTL, KC_LALT, KC_LGUI,
     KC_TILD, KC_EXLM, KC_AT,   KC_HASH, KC_PIPE, X_NA,    X_NA,    X_NA,    KC_ALGR, DF(NSSL),
-    X_NP,    X_NP,    KC_DOT,  KC_0,    KC_MINS, DF(BASE),X_NA,    X_NA,    X_NP,    X_NP
+    X_NP,    X_NP,    KC_LPRN, KC_RPRN, KC_UNDS, DF(BASE),X_NA,    X_NA,    X_NP,    X_NP
   ),
 };
