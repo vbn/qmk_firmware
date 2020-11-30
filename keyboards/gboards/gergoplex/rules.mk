@@ -12,3 +12,5 @@ BOOTMAGIC_ENABLE = lite
 DEBOUNCE_TYPE  = eager_pr
 SRC += matrix.c
 QUANTUM_LIB_SRC += i2c_master.c
+
+LAYOUTS = split_3x5_3
