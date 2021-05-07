@@ -61,6 +61,31 @@ void matrix_scan_user(void) {
 #endif // defined MH_AUTO_BUTTONS && defined PS2_MOUSE_ENABLE && #defined MOUSEKEY_ENABLE
 
 
+#if defined MH_AUTO_BUTTONS && defined MOUSEKEY_ENABLE && ! defined PS2_MOUSE_ENABLE
+
+bool led_update_user(led_t led_state) {
+  #if defined CONSOLE_ENABLE
+  uprintf("led_state.MH_AUTO_BUTTONS_LED: %d\n", led_state.MH_AUTO_BUTTONS_LED);
+  #endif
+  if(led_state.MH_AUTO_BUTTONS_LED)
+  {
+    layer_on(MH_AUTO_BUTTONS_LAYER);
+  #if defined CONSOLE_ENABLE
+    print("mh_auto_buttons: on\n");
+  #endif
+  } else {
+    layer_off(MH_AUTO_BUTTONS_LAYER);
+  #if defined CONSOLE_ENABLE
+    print("mh_auto_buttons: off\n");
+  #endif
+  }
+  return true;
+}
+
+#endif // defined MH_AUTO_BUTTONS && defined MOUSEKEY_ENABLE && ! defined PS2_MOUSE_ENABLE
+
+
+
 #if defined MH_OLED_IMAGE_LOGO && defined OLED_DRIVER_ENABLE
 
 oled_rotation_t oled_init_user(oled_rotation_t rotation) {

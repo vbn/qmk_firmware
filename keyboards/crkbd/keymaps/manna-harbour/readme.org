@@ -6,7 +6,8 @@ This keymap includes crkbd-specific hardware feature support.  It provides easy
 selection of the following:
 
 - hotswap trackpoint module in OLED port, or OLED with new or old drivers
-- automatic mouse buttons layer activation on trackpoint movement
+- automatic mouse buttons layer activation on trackpoint or X11 pointing device
+  movement
 - keyboard-side mouse acceleration, or low rates for use with host-side
   acceleration
 - static image display, or use as caps lock indicator
@@ -14,14 +15,11 @@ selection of the following:
 - automatic conversion of image files
 - matrix, light, or underglow RGB
 
-It imports [[https://github.com/manna-harbour/qmk_firmware/blob/miryoku/users/manna-harbour_miryoku/miryoku.org][miryoku]], an ergonomic, minimal, orthogonal layout for ergo or ortho
-keyboards.
+It imports [[https://github.com/manna-harbour/qmk_firmware/blob/miryoku/users/manna-harbour_miryoku/miryoku.org][miryoku]], an ergonomic, minimal, orthogonal layout for ergo or ortho keyboards.
 
 Please see the [[https://github.com/manna-harbour/qmk_firmware/blob/crkbd/keyboards/crkbd/keymaps/manna-harbour/readme.org][development branch]] for any [[https://github.com/qmk/qmk_firmware/compare/master...manna-harbour:crkbd][updates not yet merged into QMK]].
 
-Hotswap trackpoint module hardware details and additional OLED image data files
-are provided outside QMK in the [[https://github.com/manna-harbour/crkbd/blob/master/readme.org][Crkbd Keymap by Manna Harbour (Extras)
-repository]].
+Hotswap trackpoint module hardware details, additional OLED image data files, and ~xautobuttonsd~ are provided outside QMK in the [[https://github.com/manna-harbour/crkbd/blob/master/readme.org][Crkbd Keymap by Manna Harbour (Extras) repository]].
 
 
 * Contents                                                              :TOC:
@@ -41,9 +39,7 @@ repository]].
 
 * Features
 
-The following features are provided.  They can be selected by editing [[./rules.mk][rules.mk]]
-or by [[#sample-configurations][providing options to make when building]].  When enabling multiple features
-~LTO_ENABLE=yes~ may be required to reduce firmware size.
+The following features are provided.  They can be selected by editing [[./rules.mk][rules.mk]] or by [[#sample-configurations][providing options to make when building]].  When enabling multiple features ~LTO_ENABLE=yes~ may be required to reduce firmware size.
 
 Additional configuration options can be configured by editing [[./config.h][config.h]].
 
@@ -79,10 +75,11 @@ Enables OLED support using the old API.
 
 ** MH_AUTO_BUTTONS
 
-Automatic mouse buttons layer activation on trackpoint movement.
+Automatic mouse buttons layer activation on trackpoint or X11 pointing device
+movement.
 
 Requires MH_MODULE=trackpoint (or other PS/2 trackpoint, trackball or trackpad
-with PS2_MOUSE_ENABLE).
+with PS2_MOUSE_ENABLE), or ~xautobuttonsd~.
 
 Configuration options:
 
@@ -99,7 +96,7 @@ Configuration options:
 
   Position the layer in the layer stack for desired precedence.
 
-- MH_AUTO_BUTTONS_TIMEOUT
+- MH_AUTO_BUTTONS_TIMEOUT (trackpoint only)
 
   Time in ms to deactivate layer after last movement.
 
@@ -108,6 +105,10 @@ Configuration options:
 
   If using ~unclutter~, use with the same timeout (e.g. ~unclutter -idle
   0.75~) for a visual indication of activation state.
+
+- MH_AUTO_BUTTONS_LED (~xautobuttonsd~ only)
+
+  Keyboard indicator LED to monitor, corresponding to the LED used with ~xautobuttonsd~.
 
 
 ** MH_LOW_MOUSE
@@ -316,6 +317,7 @@ make crkbd:manna-harbour:flash
 
 - https://docs.qmk.fm/#/custom_quantum_functions
 - https://docs.qmk.fm/#/feature_layers
+- https://docs.qmk.fm/#/feature_led_indicators
 - https://docs.qmk.fm/#/feature_mouse_keys
 - https://docs.qmk.fm/#/feature_oled_driver
 - https://docs.qmk.fm/#/feature_ps2_mouse

@@ -31,6 +31,10 @@
   #define MH_AUTO_BUTTONS_TIMEOUT 750
 #endif
 
+#if defined MH_AUTO_BUTTONS && defined MOUSEKEY_ENABLE && ! defined PS2_MOUSE_ENABLE
+  #define MH_AUTO_BUTTONS_LED kana //  ./xautobuttonsd -l 4
+#endif
+
 #if !defined MH_LOW_MOUSE && defined PS2_MOUSE_ENABLE
   #define PS2_MOUSE_X_MULTIPLIER 3
   #define PS2_MOUSE_Y_MULTIPLIER PS2_MOUSE_X_MULTIPLIER
