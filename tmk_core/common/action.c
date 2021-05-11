@@ -236,15 +236,20 @@ static struct {
 #    endif
 } bilateral_combinations = { false };
 
-static bool bilateral_combinations_left(keypos_t key) {
-#    ifdef SPLIT_KEYBOARD
-    return key.row < MATRIX_ROWS / 2;
+__attribute__((weak)) bool bilateral_combinations_left(keypos_t key) {
+#    ifdef BILATERAL_COMBINATIONS_COLS
+    int bilateral_combinations_cols[] = { BILATERAL_COMBINATIONS_COLS };
+    return key.col < bilateral_combinations_cols[key.row];
 #    else
+#      ifdef SPLIT_KEYBOARD
+    return key.row < MATRIX_ROWS / 2;
+#      else
     if (MATRIX_COLS > MATRIX_ROWS) {
         return key.col < MATRIX_COLS / 2;
     } else {
         return key.row < MATRIX_ROWS / 2;
     }
+#      endif
 #    endif
 }
 
