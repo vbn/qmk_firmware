@@ -238,7 +238,7 @@ static struct {
 
 __attribute__((weak)) bool bilateral_combinations_left(keypos_t key) {
 #    ifdef BILATERAL_COMBINATIONS_COLS
-    int bilateral_combinations_cols[] = { BILATERAL_COMBINATIONS_COLS };
+    int bilateral_combinations_cols[MATRIX_ROWS] = { BILATERAL_COMBINATIONS_COLS };
     return key.col < bilateral_combinations_cols[key.row];
 #    else
 #      ifdef SPLIT_KEYBOARD
