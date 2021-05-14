@@ -1,22 +1,31 @@
 name: 'Tangle'
 on:
-  - workflow_dispatch
   - push
+  - pull_request
+  - workflow_dispatch
 jobs:
   build:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version:
+          - 3.x
     steps:
     - name: Checkout
       uses: actions/checkout@v2
+    - name: Python ${{ matrix.python-version }}
+      uses: actions/setup-python@v2
+      with:
+        python-version: ${{ matrix.python-version }}
     - name: Install
       run: |
         sudo apt-get update
         sudo apt-get install -y emacs-nox
     - name: Versions
       run: |
-        emacs --version
+        python --version
         emacs --batch -f org-version
-        python3 --version
+        emacs --version
     - name: Clean
       run: |
         rm keyboards/{*,*/*,*/*/*}/keymaps/manna-harbour_miryoku/*
@@ -26,7 +35,7 @@ jobs:
         git status -s
     - name: Tangle
       run: |
-        emacs --batch -eval '(setq org-confirm-babel-evaluate nil)' -eval "(require 'ob-python)" -eval '(setq org-babel-python-command "python3")' users/manna-harbour_miryoku/miryoku.org -f org-babel-tangle
+        emacs --batch -eval '(setq org-confirm-babel-evaluate nil)' -eval "(require 'ob-python)" users/manna-harbour_miryoku/miryoku.org -f org-babel-tangle
     - name: Test
       run: |
         git status -s
