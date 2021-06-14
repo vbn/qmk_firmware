@@ -1,6 +1,7 @@
 // https://github.com/manna-harbour/qmk_firmware/blob/crkbd/keyboards/crkbd/keymaps/manna-harbour/readme.org
 
 #include QMK_KEYBOARD_H
+#include "split_util.h"
 
 #if defined MH_OLED_IMAGE_FILE && defined OLED_DRIVER_ENABLE
 #include "mh_image.h"
