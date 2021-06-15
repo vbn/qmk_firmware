@@ -11,7 +11,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     RESET,             U_NA,              U_NA,              U_NA,              U_NA,              U_NA,              U_NA,              U_NA,              U_NA,              U_NA,
     KC_LGUI,           KC_LALT,           KC_LCTL,           KC_LSFT,           U_NA,              KC_LEFT,           KC_DOWN,           KC_UP,             KC_RGHT,           KC_DEL,
     U_NA,              U_NA,              U_NA,              U_NA,              U_NA,              KC_HOME,           KC_PGDN,           KC_PGUP,           KC_END,            KC_INS,
-    U_NP,              U_NP,              U_NA,              U_NA,              U_NA,              KC_ENT,            KC_BSPC,           KC_DEL,            U_NP,              U_NP
+    U_NP,              U_NP,              U_NA,              U_NA,              U_NA,              KC_ENT,            KC_BSPC,           U_NA,              U_NP,              U_NP
   ),
   [MOUSE] = LAYOUT_miryoku(
     RESET,             U_NA,              U_NA,              U_NA,              U_NA,              KC_MPRV,           KC_VOLD,           KC_VOLU,           KC_MNXT,           KC_MPLY,
@@ -21,9 +21,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   ),
   [NUM] = LAYOUT_miryoku(
     KC_1,              KC_2,              KC_3,              KC_4,              KC_5,              U_NA,              KC_GRV,            KC_MINS,           KC_EQL,             U_NA,
-    LGUI_T(KC_6),      LALT_T(KC_7),      LCTL_T(KC_8),      LSFT_T(KC_9),      KC_0,              U_NA,              LSFT_T(KC_LBRC),   LCTL_T(KC_RBRC),   LALT_T(KC_SCLN),    KC_LGUI,
-    U_NA,              U_NA,              U_NA,              U_NA,              U_NA,              U_NA,              U_NA,              U_NA,              U_NA,               U_NA,
-    U_NP,              U_NP,              U_NA,              KC_DOT,            KC_ESC,            U_NA,              U_NA,              U_NA,              U_NP,               U_NP
+    LGUI_T(KC_6),      LALT_T(KC_7),      LCTL_T(KC_8),      LSFT_T(KC_9),      KC_0,              U_NA,              KC_LSFT,           KC_LCTL,           KC_LALT,            KC_LGUI,
+    U_NA,              KC_DOT,            KC_SCLN,           KC_LBRC,           KC_RBRC,           U_NA,              U_NA,              U_NA,              U_NA,               U_NA,
+    U_NP,              U_NP,              U_NA,              KC_SPC,            KC_ESC,            U_NA,              U_NA,              U_NA,              U_NP,               U_NP
     #if 0
     /* alt */
     KC_1,    KC_2,    KC_3,    KC_4,    KC_5,    KC_6,    KC_7,    KC_8,    KC_9,    KC_0,
