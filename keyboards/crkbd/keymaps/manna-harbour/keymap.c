@@ -26,6 +26,10 @@
 #include MH_USER_NAME_H // for MH_AUTO_BUTTONS_LAYER
 #endif
 
+#if defined OLED_DRIVER_ENABLE || defined SSD1306OLED
+#include "split_util.h"
+#endif
+
 
 #if defined MH_AUTO_BUTTONS && defined PS2_MOUSE_ENABLE && defined MOUSEKEY_ENABLE
 
