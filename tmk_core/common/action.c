@@ -41,14 +41,18 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #    include "pointing_device.h"
 #endif
 
+#if (BILATERAL_COMBINATIONS + 0)
+#    include "quantum.h"
+#endif
+
+#ifdef BILATERAL_COMBINATIONS_HANDS
+#    include "quantum/keymap.h"
+#endif
+
 int tp_buttons;
 
 #if defined(RETRO_TAPPING) || defined(RETRO_TAPPING_PER_KEY)
 int retro_tapping_counter = 0;
-#endif
-
-#if (BILATERAL_COMBINATIONS + 0)
-#    include "quantum.h"
 #endif
 
 #ifdef IGNORE_MOD_TAP_INTERRUPT_PER_KEY
@@ -250,7 +254,9 @@ static struct {
 } bilateral_combinations = { false };
 
 __attribute__((weak)) bool bilateral_combinations_left(keypos_t key) {
-#    ifdef BILATERAL_COMBINATIONS_COLS
+#    if defined (BILATERAL_COMBINATIONS_HANDS)
+    return (keymap_key_to_keycode(BILATERAL_COMBINATIONS_HANDS, key) == KC_L);
+#    elif defined (BILATERAL_COMBINATIONS_COLS)
     int bilateral_combinations_cols[MATRIX_ROWS] = { BILATERAL_COMBINATIONS_COLS };
     return key.col < bilateral_combinations_cols[key.row];
 #    else

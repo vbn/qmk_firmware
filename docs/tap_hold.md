@@ -216,18 +216,35 @@ If `BILATERAL_COMBINATIONS` is defined to a value, hold times greater than that 
 #define BILATERAL_COMBINATIONS 500
 ```
 
-To override the default handedness heuristic, define `BILATERAL_COMBINATIONS_COLS` with the right hand starting column index for each row. For example, for the `65_ansi` layout, add the following to your `config.h`:
-
-```c
-#define BILATERAL_COMBINATIONS_COLS 6, 6, 6, 6, 4
-```
-
-Alternatively, the `bilateral_combinations_left()` function from `tmk_core/common/action.c` can be overridden by defining it in your `keymap.c`.
-
 To monitor activations in the background, enable debugging, enable the console, enable terminal bell, add `#define DEBUG_ACTION` to `config.h`, and use something like the following shell command line:
 
 ```sh
 hid_listen | sed -u 's/BILATERAL_COMBINATIONS: change/&\a/g'
+```
+
+The default handedness heuristic requires a symmetric layout and a regular matrix.  The following alternatives are available, in order of precedence:
+
+The `bilateral_combinations_left()` function from `tmk_core/common/action.c` can be overridden by defining it in your `keymap.c`.
+
+For an irregular matrix, add a new layer to your keymap, populate the layer with `KC_L` and `KC_R` in key positions used by the left and right hands respectively, and define `BILATERAL_COMBINATIONS_HANDS` to the layer index.  E.g:
+
+```c
+[BILATERAL_COMBINATIONS_HANDS_LAYER] = LAYOUT_ortho_4x12(
+KC_L, KC_L, KC_L, KC_L, KC_L, KC_L, KC_R, KC_R, KC_R, KC_R, KC_R, KC_R,
+KC_L, KC_L, KC_L, KC_L, KC_L, KC_L, KC_R, KC_R, KC_R, KC_R, KC_R, KC_R,
+KC_L, KC_L, KC_L, KC_L, KC_L, KC_L, KC_R, KC_R, KC_R, KC_R, KC_R, KC_R,
+KC_L, KC_L, KC_L, KC_L, KC_L, KC_L, KC_R, KC_R, KC_R, KC_R, KC_R, KC_R
+)
+```
+
+```c
+#define BILATERAL_COMBINATIONS_HANDS BILATERAL_COMBINATIONS_HANDS_LAYER
+```
+
+For an asymmetric layout but regular matrix, define `BILATERAL_COMBINATIONS_COLS` with the right hand starting column index for each row. For example, for the `65_ansi` layout, add the following to your `config.h`:
+
+```c
+#define BILATERAL_COMBINATIONS_COLS 6, 6, 6, 6, 4
 ```
 
 ## Why do we include the key record for the per key functions?
