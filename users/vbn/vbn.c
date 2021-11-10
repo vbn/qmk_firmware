@@ -38,7 +38,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [FUN] = LAYOUT_miryoku(
     KC_F1,             KC_F2,             KC_F3,             KC_F4,             KC_F5,            U_NA,               U_NA,              U_NA,              U_NA,               U_NA,
     LGUI_T(KC_F6),     LALT_T(KC_F7),     LCTL_T(KC_F8),     LSFT_T(KC_F9),     KC_F10,           U_NA,               KC_LSFT,           KC_LCTL,           KC_LALT,            KC_LGUI,
-    U_NA,              U_NA,              U_NA,              U_NA,              U_NA,             U_NA,               U_NA,              U_NA,              U_NA,               U_NA,
+    KC_F11,            KC_F12,            KC_F13,            KC_F14,            KC_F15,           U_NA,               U_NA,              U_NA,              U_NA,               U_NA,
     U_NP,              U_NP,              U_NA,              U_NA,              U_NA,             U_NA,               U_NA,              U_NA,              U_NP,               U_NP
   )
 };
