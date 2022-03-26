@@ -42,3 +42,16 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     U_NP,              U_NP,              U_NA,              U_NA,              U_NA,             U_NA,               U_NA,              U_NA,              U_NP,               U_NP
   )
 };
+
+uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
+    switch (keycode) {
+        case LGUI_T(KC_A):
+        case LGUI_T(KC_QUOT):
+            return TAPPING_TERM + 100;
+        case LSFT_T(KC_F):
+        case LSFT_T(KC_J):
+            return TAPPING_TERM - 50;
+        default:
+            return TAPPING_TERM;
+    }
+}
