@@ -20,10 +20,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     U_NP,              U_NP,              U_NA,              U_NA,              U_NA,              KC_BTN1,           KC_BTN3,           U_NA,              U_NP,              U_NP
   ),
   [NUM] = LAYOUT_miryoku(
-    KC_1,              KC_2,              KC_3,              KC_4,              KC_5,              U_NA,              KC_GRV,            KC_MINS,           KC_EQL,             U_NA,
-    LGUI_T(KC_6),      LALT_T(KC_7),      LCTL_T(KC_8),      LSFT_T(KC_9),      KC_0,              U_NA,              KC_LSFT,           KC_LCTL,           KC_LALT,            KC_LGUI,
-    KC_BSLS,           KC_DOT,            KC_SCLN,           KC_LBRC,           KC_RBRC,           U_NA,              U_NA,              U_NA,              U_NA,               U_NA,
-    U_NP,              U_NP,              U_NA,              KC_SPC,            KC_ESC,            U_NA,              U_NA,              U_NA,              U_NP,               U_NP
+    KC_1,              KC_2,              KC_3,              KC_4,              KC_5,              U_NA,              KC_GRV,            KC_MINS,           KC_EQL,            U_NA,
+    LGUI_T(KC_6),      LALT_T(KC_7),      LCTL_T(KC_8),      LSFT_T(KC_9),      KC_0,              U_NA,              KC_LSFT,           KC_LCTL,           KC_LALT,           KC_LGUI,
+    KC_BSLS,           KC_DOT,            KC_SCLN,           KC_LBRC,           KC_RBRC,           U_NA,              U_NA,              U_NA,              U_NA,              U_NA,
+    U_NP,              U_NP,              U_NA,              KC_SPC,            KC_ESC,            U_NA,              U_NA,              U_NA,              U_NP,              U_NP
     #if 0
     /* alt */
     KC_1,    KC_2,    KC_3,    KC_4,    KC_5,    KC_6,    KC_7,    KC_8,    KC_9,    KC_0,
@@ -36,10 +36,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     #endif
   ),
   [FUN] = LAYOUT_miryoku(
-    KC_F1,             KC_F2,             KC_F3,             KC_F4,             KC_F5,            U_NA,               U_NA,              U_NA,              U_NA,               U_NA,
-    LGUI_T(KC_F6),     LALT_T(KC_F7),     LCTL_T(KC_F8),     LSFT_T(KC_F9),     KC_F10,           U_NA,               KC_LSFT,           KC_LCTL,           KC_LALT,            KC_LGUI,
-    KC_F11,            KC_F12,            KC_F13,            KC_F14,            KC_F15,           U_NA,               U_NA,              U_NA,              U_NA,               U_NA,
-    U_NP,              U_NP,              U_NA,              U_NA,              U_NA,             U_NA,               U_NA,              U_NA,              U_NP,               U_NP
+    KC_F1,             KC_F2,             KC_F3,             KC_F4,             KC_F5,            U_NA,              U_NA,              U_NA,              U_NA,               U_NA,
+    LGUI_T(KC_F6),     LALT_T(KC_F7),     LCTL_T(KC_F8),     LSFT_T(KC_F9),     KC_F10,           U_NA,              KC_LSFT,           KC_LCTL,           KC_LALT,            KC_LGUI,
+    KC_F11,            KC_F12,            KC_F13,            KC_F14,            KC_F15,           U_NA,              U_NA,              U_NA,              U_NA,               U_NA,
+    U_NP,              U_NP,              U_NA,              U_NA,              U_NA,             U_NA,              U_NA,              U_NA,              U_NP,               U_NP
   )
 };
 
