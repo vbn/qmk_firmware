@@ -1,3 +1,7 @@
+# To compile:
+# make -j16 crkbd:manna-harbour:avrdude-split-left  USER_NAME=vbn MH_OLED_IMAGE=corne.c MH_MODULE=oled MH_OLED_MODE=static
+# make -j16 crkbd:manna-harbour:avrdude-split-right USER_NAME=vbn MH_OLED_IMAGE=corne.c MH_MODULE=oled MH_OLED_MODE=static
+
 # without opt: 20270/28672
 # optimization
 LTO_ENABLE = yes # 17898/28672 (-8.27%)
